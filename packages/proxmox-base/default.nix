@@ -34,8 +34,7 @@ rustPlatform.buildRustPackage {
   doCheck = false;
 
   meta = with lib; {
-    description = "A fast line-oriented regex search tool, similar to ag and ack";
-    homepage = "https://github.com/BurntSushi/ripgrep";
+    homepage = "https://git.proxmox.com/?p=proxmox.git";
     license = licenses.unlicense;
     maintainers = [ maintainers.julienmalka ];
   };
