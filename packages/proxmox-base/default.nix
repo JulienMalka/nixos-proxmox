@@ -1,4 +1,4 @@
-{ lib, fetchgit, rustPlatform, pkg-config, openssl, gcc, rustup, luajitPackages }:
+{ lib, fetchgit, rustPlatform, pkg-config, openssl }:
 
 rustPlatform.buildRustPackage {
   pname = "proxmox-base";
