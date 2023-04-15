@@ -12,6 +12,10 @@
   outputs = { nixpkgs, ... }@inputs:
     let
       supported_plats = [ "x86_64-linux" ];
+      pkgs = import nixpkgs
+        {
+          system = "x86_64-linux";
+        };
     in
 
     rec {
@@ -24,7 +28,7 @@
               (builtins.listToAttrs (builtins.map
                 (e: {
                   name = e;
-                  value = supported_plats.${plat}.callPackage (./packages + "/${e}") { };
+                  value = pkgs.callPackage (./packages + "/${e}") { };
                 })
                 (builtins.attrNames (builtins.readDir ./packages))));
           })
